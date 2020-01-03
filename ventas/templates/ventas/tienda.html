@@ -1,0 +1,68 @@
+{% extends "ventas/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<article class="artProductos">
+    <div class="filtros">
+        <form action="">
+            <div class="filtro">
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria" onchange="submitCategoria()">
+                    <option value="" selected>Todos</option>
+                    {% for categoria in Categorias %}
+                    {% if categoria.nombre == selectCategoria %}
+                    <option selected value="{{categoria}}">{{categoria}}</option>
+                    {% else %}
+                    <option value="{{categoria}}">{{categoria}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="filtro">
+                <label for="nombre">Nombre producto</label>
+                {% if inputNombre is not None %}
+                <input type="text" name="nombre" id="nombre" value="{{inputNombre}}">
+                {% else %}
+                <input type="text" name="nombre" id="nombre">
+                {% endif %}
+                <input type="submit" style="display: none" />
+            </div>
+            <div class="filtro">
+                <label for="ordenar">Ordenar por</label>
+                <select name="ordenar" id="ordenar" onchange="this.form.submit()">
+                    <option selected value="menorprecio">Menor precio</option>
+                    {% if ordenarPor == "categoria" %}
+                    <option selected value="categoria">Categoria</option>
+                    {% else %}
+                    <option value="categoria">Categoria</option>
+                    {% endif %}
+                    {% if ordenarPor == "mayorprecio" %}
+                    <option selected value="mayorprecio">Mayor precio</option>
+                    {% else %}
+                    <option value="mayorprecio">Mayor precio</option>
+                    {% endif %}
+                    {% if ordenarPor == "onombre" %}
+                    <option selected value="onombre">Nombre</option>
+                    {% else %}
+                    <option value="onombre">Nombre</option>
+                    {% endif %}
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="productos">
+        {% for producto in Productos %}
+        <div class="producto">
+            <h2>{{ producto.nombre }}</h2>
+            <img src="{{ producto.imagen.url }}" alt="">
+            <p>{{ producto.descripcion }}</p>
+            <p>${{ producto.valor }}</p>
+            <a href="">Añadir al carro</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</article>
+
+{% endblock %}

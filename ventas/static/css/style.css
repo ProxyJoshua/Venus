@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    background: rgb(152,107,79);
+    background: linear-gradient(162deg, rgba(152,107,79,0.8) 0%, rgba(237,202,141,0.8) 9%, rgba(191,133,77,0.8) 16%, rgba(119,63,26,0.8) 25%, rgba(227,190,138,0.8) 32%, rgba(227,190,138,0.8) 40%, rgba(127,80,61,0.8) 50%, rgba(199,134,65,0.8) 64%, rgba(246,222,174,0.8) 70%, rgba(221,166,93,0.8) 81%, rgba(91,40,17,0.8) 92%, rgba(46,23,10,0.8) 100%);
+}
+
+#divLogo {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.imgLogo {
+    width: 60px;
+}
+
+.aLogo {
+    font-family: 'Lobster', cursive;
+    font-size: 44px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 3px 5px 2px #474747;
+}
+
+nav {
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+}
+
+nav ul li {
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.27);
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 45px;
+    text-shadow: 3px 5px 2px #474747;
+    font-weight: bold;
+    font-family: 'Girassol', cursive;
+}
+
+.artIndex {
+    margin: 200px 0;
+    text-align: center;
+}
+
+.artProductos {
+    background: linear-gradient(162deg, rgba(152,107,79,0.2) 0%, rgba(237,202,141,0.2) 9%, rgba(191,133,77,0.2) 16%, rgba(119,63,26,0.2) 25%, rgba(227,190,138,0.2) 32%, rgba(227,190,138,0.2) 40%, rgba(127,80,61,0.2) 50%, rgba(199,134,65,0.2) 64%, rgba(246,222,174,0.2) 70%, rgba(221,166,93,0.2) 81%, rgba(91,40,17,0.2) 92%, rgba(46,23,10,0.2) 100%);
+}
+
+
+
+.productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.producto {
+    padding: 5px;
+    border: solid 1px #c4c4c4;
+    margin: 10px;
+    flex-basis: 20%;
+    flex-grow: 0;
+    text-align: center;
+    background: rgb(255, 255, 255);
+}
+
+.producto img {
+    width: 200px;
+}
+
+.producto h2 {
+    text-align: center;
+    font-family: 'Girassol', cursive;
+}
+
+.producto p {
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Girassol', cursive;
+    width: 100%;
+}
+
+.producto a {
+    text-decoration: none;
+    color: #474747;
+    padding: 5px;
+    border: solid 1px #474747;
+    text-align: center;
+}
+
+.producto a:hover {
+    color: #fff;
+    background: #474747;
+}
+
+.filtros{
+    padding: 5px 5px 0 5px;
+}
+
+.filtros form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filtro {
+    margin: 5px 0;
+}
+
+.filtro label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.filtro input,.filtro select {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    margin: 0 10px;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: .15s ease-in-out;
+    overflow: visible;
+}
+
+.filtro input:focus,.filtro select:focus{
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.carrito {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.carro {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0 5px;
+    align-items: center;
+    font-size: 26px;
+    margin: 10px 10px;
+}
+
+
+
+footer {
+    background: #000;
+    height: 300px;
+}
+
+footer h2{
+    color: #fff;
+    font-size: 30px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.bgFooter {
+    background: linear-gradient(162deg, rgba(152,107,79,0.2) 0%, rgba(237,202,141,0.2) 9%, rgba(191,133,77,0.2) 16%, rgba(119,63,26,0.2) 25%, rgba(227,190,138,0.2) 32%, rgba(227,190,138,0.2) 40%, rgba(127,80,61,0.2) 50%, rgba(199,134,65,0.2) 64%, rgba(246,222,174,0.2) 70%, rgba(221,166,93,0.2) 81%, rgba(91,40,17,0.2) 92%, rgba(46,23,10,0.2) 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+}
