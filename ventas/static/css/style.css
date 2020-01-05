@@ -112,6 +112,7 @@ nav ul li a {
     padding: 5px;
     border: solid 1px #474747;
     text-align: center;
+    margin-top: 5px;
 }
 
 .producto a:hover {
