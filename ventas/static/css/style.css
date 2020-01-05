@@ -103,7 +103,6 @@ nav ul li a {
     padding: 5px;
     font-size: 18px;
     font-family: 'Girassol', cursive;
-    width: 100%;
 }
 
 .producto a {
@@ -112,7 +111,8 @@ nav ul li a {
     padding: 5px;
     border: solid 1px #474747;
     text-align: center;
-    margin-top: 5px;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .producto a:hover {
