@@ -7,7 +7,9 @@ header {
     width: 100%;
     background: #fff;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: flex-end;
     background: rgb(152,107,79);
     background: linear-gradient(162deg, rgba(152,107,79,0.8) 0%, rgba(237,202,141,0.8) 9%, rgba(191,133,77,0.8) 16%, rgba(119,63,26,0.8) 25%, rgba(227,190,138,0.8) 32%, rgba(227,190,138,0.8) 40%, rgba(127,80,61,0.8) 50%, rgba(199,134,65,0.8) 64%, rgba(246,222,174,0.8) 70%, rgba(221,166,93,0.8) 81%, rgba(91,40,17,0.8) 92%, rgba(46,23,10,0.8) 100%);
 }
@@ -16,6 +18,7 @@ header {
     display: flex;
     flex-direction: row;
     padding: 5px;
+    margin-right: auto;
 }
 
 .imgLogo {
@@ -31,34 +34,58 @@ header {
     text-shadow: 3px 5px 2px #474747;
 }
 
+.show {
+    display: block !important;
+}
+
+.menu {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#btnHam {
+    padding: 26px 22px;
+}
+
+#icnHam {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #fff;
+}
+
 nav {
     width: 100%;
     align-items: center;
-    display: flex;
+    display: none;
+    border: 1px solid #000;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: block;
     width: 100%;
 }
 
 nav ul li {
     width: 100%;
     text-align: center;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 nav ul li a {
+    display: block;
+    width: 98%;
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 24px;
-    background: rgba(0, 0, 0, 0.27);
     border-radius: 5px;
-    padding: 7px;
-    margin-top: 45px;
+    padding: 7px 0;
     text-shadow: 3px 5px 2px #474747;
     font-weight: bold;
     font-family: 'Girassol', cursive;
+}
+
+nav ul li:hover {
+    background: rgba(0, 0, 0, 0.212);
 }
 
 .artIndex {
@@ -85,7 +112,8 @@ nav ul li a {
     border: solid 1px #c4c4c4;
     margin: 10px;
     flex-basis: 20%;
-    flex-grow: 0;
+    flex-shrink: 2;
+    flex-grow: 1;
     text-align: center;
     background: rgb(255, 255, 255);
 }
@@ -105,7 +133,7 @@ nav ul li a {
     font-family: 'Girassol', cursive;
 }
 
-.producto a {
+.producto .btnA {
     text-decoration: none;
     color: #474747;
     padding: 5px;
@@ -115,13 +143,13 @@ nav ul li a {
     width: 100%;
 }
 
-.producto a:hover {
+.producto .btnA:hover {
     color: #fff;
     background: #474747;
 }
 
 .filtros{
-    padding: 5px 5px 0 5px;
+    padding: 5px 30px 0 10px;
 }
 
 .filtros form {
@@ -139,9 +167,8 @@ nav ul li a {
 }
 
 .filtro input,.filtro select {
-    padding: .375rem .75rem;
     font-size: 1rem;
-    margin: 0 10px;
+    margin-left: 10px;
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
@@ -149,6 +176,7 @@ nav ul li a {
     border-radius: .25rem;
     transition: .15s ease-in-out;
     overflow: visible;
+    width: 100%;
 }
 
 .filtro input:focus,.filtro select:focus{
@@ -157,6 +185,14 @@ nav ul li a {
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.filtro input {
+    padding: .375rem 0;
+}
+
+.filtro select {
+    padding: .375rem .75rem;
 }
 
 .carrito {
@@ -180,7 +216,6 @@ nav ul li a {
 
 footer {
     background: #000;
-    height: 300px;
 }
 
 footer h2{

@@ -42,6 +42,14 @@ def tienda(request):
     }
     return render(request, 'ventas/tienda.html', contexto)
 
+def producto(request, pk):
+    producto = Producto.objects.get(pk=pk)
+    return render(request, 'ventas/producto.html', {"producto":producto})
+
+def añadir(request, pk):
+
+    return render(request, 'ventas/producto.html', {"producto":producto})
+
 def carro(request):
 
     return render(request, 'ventas/carro.html', {})

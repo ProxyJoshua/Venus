@@ -21,6 +21,7 @@
     <meta name="msapplication-TileImage" content="{% static 'images/favicon/ms-icon-144x144.png' %}">
     <meta name="theme-color" content="#ffffff">
     <title>Venus Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Girassol|Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -34,6 +35,17 @@
             <img class="imgLogo" src="{% static 'images/logo.png' %}" alt="logo">
             <a href="" class="aLogo">Venus</a>
         </div>
+        <div class="carrito">
+            <div class="carro">
+                <i class="material-icons">shopping_cart</i>
+                <span class="nrCarrito">0</span>
+            </div>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" id="btnHam" class="icon" onclick="showMenu()">
+                <i class="fa fa-bars" id="icnHam"></i>
+            </a>
+        </div>
         <nav>
             <ul>
                 <li><a href="{% url 'index' %}">Inicio</a></li>
@@ -43,12 +55,6 @@
                 <li><a href="{% url 'index' %}">Registrarme</a></li>
             </ul>
         </nav>
-        <div class="carrito">
-            <div class="carro">
-                <i class="material-icons">shopping_cart</i>
-                <span class="nrCarrito">0</span>
-            </div>
-        </div>
     </header>
     <hr>
 

@@ -4,8 +4,9 @@
 {% block content %}
 
 <article class="artProductos">
-    <div class="filtros">
-        <form action="">
+    <form action="">
+        <div class="filtros">
+
             <div class="filtro">
                 <label for="categoria">Categoria</label>
                 <select name="categoria" id="categoria" onchange="submitCategoria()">
@@ -49,17 +50,17 @@
                     {% endif %}
                 </select>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
     <div class="productos">
         {% if Productos %}
         {% for producto in Productos %}
         <div class="producto">
             <h2>{{ producto.nombre }}</h2>
-            <img src="{{ producto.imagen.url }}" alt="">
+            <a href="{% url 'producto' pk=producto.pk %}"><img src="{{ producto.imagen.url }}" alt="producto"></a>
             <p>{{ producto.descripcion }}</p>
             <p>${{ producto.valor }}</p>
-            <p><a href="">Añadir al carro</a></p>
+            <p><a class="btnA" href="{% url 'añadir' pk=producto.pk %}">Añadir al carro</a></p>
         </div>
         {% endfor %}
         {% else %}

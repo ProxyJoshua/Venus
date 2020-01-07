@@ -23,3 +23,4 @@ class Carro(models.Model):
     usuario = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     productos = models.ManyToManyField(Producto)
     total = models.IntegerField(default=0)
+    estado = models.CharField(max_length=200)
