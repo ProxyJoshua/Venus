@@ -1,0 +1,25 @@
+{% extends "ventas/base.html" %}
+{% load static %}
+
+{% block content %}
+<article class="artProductos">
+    <div id="contRegistro">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.username.label}}
+            {{form.username}}
+            {{form.password.label}}
+            {{form.password}}
+            {% if form.errors %}
+            <p class="error">Usuario o clave incorrectos, porfavor intente nuevamente.</p>
+            {% endif %}
+            <input class="btnRegistrarme" type="submit" value="INGRESAR" />
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+        <div>
+            <p>¿No tienes una cuenta? <a href="{% url 'ingresar' %}">Registrate Aqui</a></p>
+        </div>
+    </div>
+</article>
+
+{% endblock %}

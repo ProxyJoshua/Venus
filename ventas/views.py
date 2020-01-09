@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.models import User
 from .models import Producto, Carro, Categoria
+from .forms import UserCreateForm
 
 def index(request):
     return render(request, 'ventas/index.html', {})
@@ -30,7 +33,6 @@ def tienda(request):
 
     if inputNombre!='' and inputNombre is not None:
         Productos = Producto.objects.filter(nombre__icontains=inputNombre).order_by(ordenarCampo)
-    print(ordenarCampo)
     
     contexto = {
         "Productos":Productos,
@@ -47,9 +49,45 @@ def producto(request, pk):
     return render(request, 'ventas/producto.html', {"producto":producto})
 
 def añadir(request, pk):
+    usuario=User(pk=request.user.pk)
+    producto = Producto.objects.get(pk=pk)
+    existe = Carro.objects.filter(usuario=usuario)
+    nr=len(existe)
+    if nr!=0:
+        existe[0].productos.add(producto)
+        existe.save()
+    else:
+        User
+        nuevo = Carro(usuario=usuario)
+        nuevo.save()
+        nuevo.productos.add(producto)
+        nuevo.save()
 
     return render(request, 'ventas/producto.html', {"producto":producto})
 
 def carro(request):
+    user=request.user
+    carro = Carro.objects.filter(usuario=user)
+    return render(request, 'ventas/carro.html', {"carro":carro})
 
-    return render(request, 'ventas/carro.html', {})
+def registrarme(request):
+    if request.method == "POST":
+        form = UserCreateForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            login(request, user)
+            return redirect("tienda")
+
+        else:
+            for msg in form.error_messages:
+                print(form.error_messages[msg])
+
+            return render(request = request,
+                          template_name = "ventas/registrarme.html",
+                          context={"form":form})
+
+    form = UserCreateForm
+    return render(request = request,
+                  template_name = "ventas/registrarme.html",
+                  context={"form":form})

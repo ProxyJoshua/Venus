@@ -2,8 +2,19 @@
 {% load static %}
 
 {% block content %}
-<article class="artIndex">
-    <h1>¡Bienvenido a la tienda Venus!</h1>
-    <p>Realizamos entregas presenciales en Quillota, Viña del Mar y Valparaiso</p>
+<article class="artCarros">
+    {% if carro %}
+    <div class="carro">
+        {% for producto in Carro.productos %}
+        <div class="carroProducto">
+            <p>{{producto.nombre}}</p>
+            <img src="{{ producto.imagen.url }}" alt="producto">
+            <p>${{ producto.valor }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h1>No tienes carros, ve a la <a href="{% url 'tienda' %}">Tienda</a> y ¡Comienza a añadir articulos!</h1>
+    {% endif %}
 </article>
 {% endblock %}

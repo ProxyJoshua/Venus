@@ -9,7 +9,7 @@
 
             <div class="filtro">
                 <label for="categoria">Categoria</label>
-                <select name="categoria" id="categoria" onchange="submitCategoria()">
+                <select name="categoria" id="categoria" onchange="this.form.submit()">
                     <option value="" selected>Todos</option>
                     {% for categoria in Categorias %}
                     {% if categoria.nombre == selectCategoria %}

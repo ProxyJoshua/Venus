@@ -114,6 +114,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Login Redirects
+
+LOGIN_URL='ingresar'
+LOGIN_REDIRECT_URL='tienda'
+LOGOUT_REDIRECT_URL='ingresar'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
